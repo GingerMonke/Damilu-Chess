@@ -66,9 +66,9 @@ def main():
                     move = (player_clicks[0], player_clicks[1])
                     if move in board.get_all_moves():
                         board = board.make_move(move)
+                        if not double_players:
+                          players_turn = False
                     player_clicks = []
-                    if not double_players:
-                        players_turn = False
 
         if board.is_over():  # stalemate
             if board.is_draw():
